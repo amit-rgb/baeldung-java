@@ -1,6 +1,6 @@
 package com.baeldung.java.objectcopy;
 
-class Customer {
+class Customer implements Cloneable{
     private String firstName;
     private String lastName;
     private Address address;
@@ -35,8 +35,8 @@ class Customer {
         this.address = address;
     }
 
-    public static Customer getShallowCopyOfCustomerObject(Customer c) {
-        return c;
+    public static Customer getShallowCopyOfCustomerObject(Customer c) throws CloneNotSupportedException {
+        return (Customer)c.clone();
     }
 
     public static Customer getDeepCopyOfCustomerObject(Customer c) {

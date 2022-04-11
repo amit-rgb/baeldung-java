@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ObjectCopyTests {
 
     @Test
-    void testShallowCopy() {
+    void testShallowCopy() throws CloneNotSupportedException {
         Customer A = new Customer("fName", "lName", new Address(123456, "address1", "address2", "city"));
         Customer B = Customer.getShallowCopyOfCustomerObject(A);
         B.getAddress()
